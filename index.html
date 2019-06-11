@@ -1,136 +1,137 @@
+
+<!DOCTYPE html>
 <html xmlns:wb="http://open.weibo.com/wb">
-
-<head>
-<script src="https://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
-    <title>基于vue+elementui</title>
-    <!-- 引入样式 -->
-    <link rel="stylesheet" href="lib/elementui/theme-chalk/index.css" type="text/css">
-    <style>
-      /* 所有 */
-      #app{
-        width:100%; height:100%;
-      }
-
-      /* 头 */
-      .header {
-        color: rgba(255,255,255,0.75);
-        line-height: 60px;
-        background-color: #24292e;
-        text-align: center;
-      }
-      .header div{
-        display: inline;
-      }
-      .title{
-      }
-      .author{
-        float: right;
-      }
-      .author-img{
-        width: 20px;
-        height: 20px;
-      }
-
-      /* 内容区 */
-      .container{
-        min-height: 600px;
-        width:100%;
-        height: 100%
-      }
-
-      /* 左边内容区 */
-      .left {
-        color: #4b595f;
-        width: 200px;
-      }
-      .left ul{
-        height: 90%;
-      }
-
-      /* 右边内容区 */
-      .right{
-        min-width: 200px;
-      }
-      tbody{
-        font-size: 15px;
-        color: #4b595f;
-      }
-
-    </style>
-</head>
-<body>
-<div id="app">
-  <el-container class="container">
-    <el-header class="header">
-      <div class="title">
-        <span>余小乐的个人demo网站</span>
-      </div>
-      <div @click="openGitHub" class="author">
-        <i class="el-icon-location-outline">yuleGH</i>
-        <img alt="@yuleGH" class="author-img" src="https://avatars2.githubusercontent.com/u/31040588?s=40&amp;v=4">
-      </div>
-    </el-header>
-
-    <el-container>
-      <el-aside class="left">
-        <el-menu :default-active="activeIndex">
-          <el-menu-item index="1" @click="open(aboutMeUrl)"><i class="el-icon-service"></i>关于我</el-menu-item>
-          <el-submenu index="firstMenu.id" v-for="firstMenu in menus" :key="firstMenu.id">
-            <template slot="title"><i :class="firstMenu.iconClass"></i>{{ firstMenu.name }}</template>
-            <el-menu-item-group v-for="secondMenu in firstMenu.children" :key="secondMenu.id">
-              <template slot="title">{{ secondMenu.name }}</template>
-              <el-menu-item v-for="thirdMenu in secondMenu.children" index="thirdMenu.id" :key="thirdMenu.id" @click="open(thirdMenu.url)">{{ thirdMenu.name }}</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
-      </el-aside>
-
-      <el-main class="right">
-          <iframe style="width:100%; height:100%; border: 0;" :src="iframeUrl"></iframe>
-      </el-main>
-
-    </el-container>
-  </el-container>
-</div>
-<!-- 引入组件库 -->
-<script type="text/javascript" src="lib/vue.js"></script>
-<script type="text/javascript" src="lib/elementui/index.js"></script>
-
-<script type="text/javascript">
-    new Vue({
-        el: "#app",
-        data: {
-          activeIndex : "1",
-          aboutMeUrl : "aboutme.html",
-          iframeUrl : "aboutme.html",
-<wb:follow-button uid="6068786838" type="red_1" width="67" height="24" ></wb:follow-button>
-          menus : [
-            {
-               name: "dialog",
-               id: "dialog",
-               iconClass: "el-icon-message",
-               children:[
-                 {
-                   name: "Notification 通知",
-                   id: "notification",
-                   children: [
-                     {name: "demo1", id: "noti-demo1", url: "dialog/notification/notification.html"}
-                   ]
-                 }
-               ]
-            }
-          ]
-        },
-        methods: {
-          open(url){
-            this.iframeUrl = url;
-          },
-          openGitHub(){
-            window.open("https://github.com/yuleGH", "_blank");
-          }
-        }
-    });
-</script>
-
-</body>
-
+	<head>
+		<meta charset="utf-8">
+        <wb:follow-button uid="6068786838" type="red_1" width="67" height="24" >
+            <title>曲琪网</title> 
+        </wb:follow-button>
+		
+        <script src="https://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+   
+	<!--
+		创建一个五行一列的表格
+		1.logo部分
+		2.导航栏
+		3.注册部分
+		4.页脚部分
+		5.网站声明信息
+	
+	-->
+	<body>
+		<table  width="100%" >
+			<tr>
+				<td>
+					<table  width="100%">
+						<tr align="center">
+							<td>
+								<img src="曲奇.png" height="20%"/>
+							</td>
+							<td>
+								<img src="琪琪.png"  height="20%"/><h2><font color="lightskyblue" face="宋体">曲琪网 欢迎您！！！</font></h2>
+							</td>
+							<td >
+								<img src="陈钰琪.png"  height="20%"/>
+								<a href="#">登录</a>
+								<a href="#">注册</a>
+								<a href="#">购物车</a>
+								
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr bgcolor="blanchedalmond" >
+				<td height="50px">
+					<a href="#"><font color="black">首页</font></a>
+					<a href="#"><font color="black">手机数码</font></a>
+					<a href="#"><font color="black">服装</font></a>
+					<a href="#"><font color="black">化妆品</font></a>
+					<a href="#"><font color="black">生活用品</font></a>
+					
+				</td>
+			</tr>
+			<tr background="2.jpeg" height="800px">
+				<td>
+					<table border="1px" width="50%" align="center"  bordercolor="yellow" bgcolor="white">
+						<tr>
+							<td>
+								<table  width="100%" align="center">
+									<tr bgcolor="cornsilk">
+										<td colspan="2" align="center"><font color="deeppink" size="4">会员注册</font>&nbsp;User Register</td>
+										
+									</tr>
+									<tr>
+										<td align="right">用户名：</td>
+										<td >
+											<input type="text" name="username" placeholder="请输入用户名"/>
+										</td>
+									</tr>
+									<tr>
+										<td align="right">密码：</td>
+										<td>
+											<input type="password" name="password" placeholder="请输入密码" />
+										</td>
+									</tr>
+									<tr>
+										<td align="right">确认密码：</td>
+										<td>
+											<input type="password" name="password" placeholder="请再次输入密码" />
+										</td>
+									</tr>
+									<tr>
+										<td align="right">Email：</td>
+										<td>
+											<input type="text" name="email" placeholder="Email" />
+										</td>
+									</tr>
+									<tr>
+										<td align="right">姓名：</td>
+										<td>
+											<input type="text" name="name" placeholder="请输入姓名" />
+									</tr>
+									<tr>
+										<td align="right">性别：</td>
+										<td>
+											<input type="radio" name="sex"/>男
+											<input type="radio" name="sex"/>女
+									</tr>
+									<tr>
+										<td align="right">出生日期：</td>
+										<td>
+											<input type="date"/>
+									</tr>
+									<tr>
+										<td align="right">验证码：</td>
+										<td>
+											<input type="text" placeholder="请输入验证码"/>
+									</tr>
+									<tr>
+										<td></td>
+										<td>
+											<input type="submit" name="submit" value="注册"/>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+			<tr>
+				<td align="center">
+					<a href="#">琪琪最美</a>
+					<a href="#">琪琪最棒</a>
+					<a href="#">曲奇爱琪姐</a>
+					<a href="#">深中琪毒</a>
+					<a href="#">琪姐666</a>
+					<a href="#">百思不得琪姐</a><br/>
+					@李香制作 版权所有
+				</td>
+			</tr>
+		</table>
+	</body>
 </html>
